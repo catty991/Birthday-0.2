@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 🫶</title>
+<style>
+  body {
+    margin:0;
+    font-family: "Comic Sans MS", cursive;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    overflow:hidden;
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+    animation: bgChange 10s infinite alternate;
+  }
+  @keyframes bgChange {
+    0% {background: linear-gradient(135deg, #ffb6c1, #ffc0cb);}
+    50% {background: linear-gradient(135deg, #ffd1dc, #ffb3c6);}
+    100% {background: linear-gradient(135deg, #ffc0cb, #ffb6c1);}
+  }
+  h1 {
+    color: #fff;
+    text-shadow: 0 0 10px #ff1493;
+    text-align:center;
+    margin: 20px;
+  }
+  .cake {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background: #ff69b4;
+    border-radius: 20px 20px 0 0;
+    margin-top: 20px;
+  }
+  .layer {
+    position:absolute;
+    width:180px;
+    height:40px;
+    left:10px;
+    background:#ff82ab;
+    border-radius:15px 15px 0 0;
+  }
+  .layer:nth-child(2){top:40px;}
+  .layer:nth-child(3){top:80px;}
+  .frosting {
+    position:absolute;
+    top:-30px;
+    width:200px;
+    height:50px;
+    background:#fff;
+    border-radius:20px 20px 0 0;
+  }
+  .sprinkles span {
+    position:absolute;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:hsl(calc(360*var(--hue)),100%,50%);
+  }
+  .candle {
+    position:absolute;
+    top:-60px;
+    width:10px;
+    height:40px;
+    background:#fff;
+    border-radius:5px;
+    left:95px;
+    cursor:pointer;
+  }
+  .flame {
+    position:absolute;
+    top:-20px;
+    left:-5px;
+    width:20px;
+    height:20px;
+    background: radial-gradient(circle, #ff0 40%, #ffa500 70%);
+    border-radius:50%;
+    animation:flicker 0.3s infinite alternate;
+  }
+  @keyframes flicker {
+    0%{transform:scale(1);opacity:1;}
+    100%{transform:scale(1.2);opacity:0.7;}
+  }
+  .message {
+    opacity:0;
+    transition:opacity 2s ease-in;
+    margin-top:30px;
+    font-size:1.2em;
+    color:#fff;
+    max-width:80%;
+    white-space: pre-line;
+  }
+  .show{opacity:1;}
+  .confetti{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  .confetti span{
+    position:absolute;
+    width:10px; height:10px;
+    background:hsl(calc(360*var(--hue)),100%,50%);
+    top:-10px;
+    animation:fall 4s linear infinite;
+  }
+  @keyframes fall{
+    0%{transform:translateY(-10px) rotate(0);}
+    100%{transform:translateY(110vh) rotate(720deg);}
+  }
+</style>
+</head>
+<body>
+<div class="cake">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="frosting"></div>
+  <div class="sprinkles">
+    <span style="top:10px;left:20px;--hue:0.1;"></span>
+    <span style="top:25px;left:50px;--hue:0.3;"></span>
+    <span style="top:15px;left:100px;--hue:0.6;"></span>
+    <span style="top:35px;left:130px;--hue:0.8;"></span>
+  </div>
+  <div class="candle" onclick="blowCandle()">
+    <div class="flame"></div>
+  </div>
+</div>
+
+<h1>🎉 Tap the candle 🎉</h1>
+<div class="message" id="msg">𝙷𝚊𝚙𝚙𝚢 𝚋𝚒𝚛𝚝𝚑𝚍𝚊𝚢 𝚖𝚢 𝚜𝚠𝚎𝚎𝚝 𝚕𝚒𝚕 𝚙𝚘𝚘𝚔𝚒𝚎, 𝚔𝚘𝚘𝚔𝚒𝚎, 𝚟𝚘𝚘𝚔𝚒𝚎, 𝚌𝚘𝚘𝚔𝚒𝚎 𝚊𝚗𝚍 𝚢𝚎𝚙 𝚖𝚢 𝚋𝚊𝚋𝚢 𝚝𝚘𝚘. 𝙹𝚞𝚜𝚝 𝚘𝚗𝚌𝚎 𝚠𝚎 𝚐𝚎𝚝 𝚖𝚊𝚛𝚛𝚒𝚎𝚍 𝚠𝚎 𝚊𝚛𝚎 𝚐𝚘𝚒𝚗𝚐 𝚝𝚘 𝚌𝚎𝚕𝚎𝚋𝚛𝚊𝚝𝚎 𝚘𝚞𝚛 𝚟𝚎𝚛𝚢 𝚜𝚒𝚗𝚐𝚕𝚎 𝚝𝚑𝚒𝚗𝚐 𝚝𝚘𝚐𝚎𝚝𝚑𝚎𝚛. 𝙰𝚊𝚊𝚑𝚑𝚑𝚑𝚑𝚑𝚑𝚑!! 🫶💗</div>
+
+<div class="confetti"></div>
+
+<audio id="music" loop>
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-birthday-happy-bells-902.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function blowCandle() {
+    document.querySelector('.flame').style.display = 'none';
+    document.getElementById('msg').classList.add('show');
+    startConfetti();
+    document.getElementById('music').play();
+  }
+
+  function startConfetti() {
+    const confettiContainer = document.querySelector('.confetti');
+    for (let i=0;i<80;i++){
+      const span=document.createElement('span');
+      span.style.left=Math.random()*100+'vw';
+      span.style.setProperty('--hue', Math.random());
+      span.style.animationDelay=Math.random()*4+'s';
+      confettiContainer.appendChild(span);
+      setTimeout(()=>span.remove(),5000);
+    }
+  }
+</script>
+</body>
+</html>
